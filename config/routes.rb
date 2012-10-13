@@ -1,6 +1,6 @@
 Ikonicx2::Application.routes.draw do
 
-  get "home/index"
+  #get "home/index"
 
   devise_for :users
 
