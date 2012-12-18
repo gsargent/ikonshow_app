@@ -1,10 +1,14 @@
 Ikonicx2::Application.routes.draw do
 
+  resources :exercises
+
   #get "home/index"
 
   devise_for :users
 
   root :to => "home#index"
+  
+  mount Attachinary::Engine => "/attachinary"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

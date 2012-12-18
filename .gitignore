@@ -21,3 +21,5 @@ doc/
 .DS_Store
 .idea
 .project
+.generators
+.sass-cache/

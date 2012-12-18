@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: ikonshow
+  api_key: '562445884211121'
+  api_secret: hI046PmLEw5IKgvVIrfriQ_ZvUM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: ikonshow
+  api_key: '562445884211121'
+  api_secret: hI046PmLEw5IKgvVIrfriQ_ZvUM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: ikonshow
+  api_key: '562445884211121'
+  api_secret: hI046PmLEw5IKgvVIrfriQ_ZvUM
+  enhance_image_tag: true
+  static_image_support: false
