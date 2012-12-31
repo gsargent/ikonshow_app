@@ -1,22 +1,29 @@
+<script>
+    $(function() {
+      $('.attachinary-input').attachinary();
+    });
+</script>
+
 <h1>Listing Exercises</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @exercises.each do |exercise| %>
-  <tr>
-    <td><%= exercise.name %></td>
-    <td><%= link_to 'Show', exercise %></td>
-    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-    <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <ul>
+    <li>
+    <span class = 'exercise_name'><%= exercise.name %></span>
+    <span class = 'edit_menu'>
+    <%= link_to 'Show', exercise %>
+    <%= link_to 'Edit', edit_exercise_path(exercise) %>
+    <%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+    <ul>
+      <% exercise.photos.each do |photo| %>
+        <li> <%= cl_image_tag(photo.path, {size: '75x75', crop: :fit } )%> </li>
+      <% end %> 
+    </ul>
+  </ul>
 <% end %>
-</table>
+
 
 <br />
 

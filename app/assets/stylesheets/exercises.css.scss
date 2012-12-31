@@ -1,6 +1,47 @@
 // Place all the styles related to the Exercises controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// The bullets will be removed on all lists (both index and edit pages)
+
 li {
 	list-style-type: none;   /* remove the list bullet on the edit action view */
+}
+//-------------------------------------------------------------------------------
+
+// index page selectors only
+
+ul:nth-child(even) {
+	background-color: #E8E8E8;
+}
+
+ul {
+	padding-left: 0px;
+}
+
+ul ul {
+	overflow: auto;
+	white-space: nowrap;
+	height: 90px;
+}
+
+ul ul img {
+	padding: 5px;
+}
+ul ul li {
+	display: inline;
+}
+
+.exercise_name {
+	color: red;
+	float: left;
+	width: 80px;
+}
+
+.edit_menu {
+	color: red;
+	float: left;
+	width: 50px;
+	font-size: smaller;
 }
