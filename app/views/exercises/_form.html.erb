@@ -19,11 +19,19 @@
   <% end %>
 
   <div class="field">
+    <!-- <%= f.label :user_id %><br /> don't need a label on a hidden field -->
+    <%= f.hidden_field :user_id, :value => get_existing_value_else_current_user_id %> 
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
 
+  <div>Get images:
+  <br />
   <%= f.attachinary_file_field :photos %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

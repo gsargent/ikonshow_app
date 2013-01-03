@@ -7,6 +7,7 @@ gem 'rails', '3.2.8' # was this: 3.1.3'
 
 group :development do
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 
 group :production do

@@ -7,8 +7,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Exercise name:</b>
   <%= @exercise.name %>
+</p>
+
+<p>
+	<b>Created by:</b>
+	<%= @exercise.user.username %>	
 </p>
 
 

@@ -1,5 +1,7 @@
 class ExercisesController < ApplicationController
 
+  # require "awesome_print"
+
   # GET /exercises
   # GET /exercises.json
   def index

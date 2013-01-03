@@ -33,6 +33,7 @@ GEM
     attachinary (1.2.1)
       cloudinary (~> 1.0.41)
       rails (~> 3.2)
+    awesome_print (1.1.0)
     aws_cf_signer (0.1.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.3)
@@ -129,6 +130,7 @@ PLATFORMS
 
 DEPENDENCIES
   attachinary
+  awesome_print
   carrierwave
   cloudinary
   coffee-rails (~> 3.2.2)

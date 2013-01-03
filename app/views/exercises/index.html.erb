@@ -10,7 +10,11 @@
 <% @exercises.each do |exercise| %>
   <ul>
     <li>
-    <span class = 'exercise_name'><%= exercise.name %></span>
+    <span class = 'exercise_label'>
+      <span><%= exercise.name %></span><br />
+      <span><%= exercise.user.username %></span>
+    </span>
+    
     <span class = 'edit_menu'>
     <%= link_to 'Show', exercise %>
     <%= link_to 'Edit', edit_exercise_path(exercise) %>

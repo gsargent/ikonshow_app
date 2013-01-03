@@ -1,5 +1,7 @@
 class Exercise < ActiveRecord::Base
-  attr_accessible :name
+  belongs_to :user
+  
+  attr_accessible :name, :user_id
 
   has_attachments :photos
 end
