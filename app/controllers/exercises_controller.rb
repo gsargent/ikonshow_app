@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-
+  # dummy comment
   # require "awesome_print"
 
   # GET /exercises
