@@ -5,7 +5,9 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    #@exercises = Exercise.all
+    # restrict to current user
+    @exercises = current_user.exercises.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
