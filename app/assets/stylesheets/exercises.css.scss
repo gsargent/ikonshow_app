@@ -12,8 +12,14 @@ li {
 
 // index page selectors only
 
+// font size on theme widgets is too big, over-ride it here.
+.ui-widget {
+	font-size: 11px;
+}
+
 ul:nth-child(even) {
 	background-color: #E8E8E8;
+	border-radius: 5px;
 }
 
 ul {

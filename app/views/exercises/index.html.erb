@@ -1,6 +1,10 @@
 <script>
     $(function() {
       $('.attachinary-input').attachinary();
+
+      // initialize jquery UI widgets
+       $('.datepicker').datepicker();
+       $('.button').button();
     });
 </script>
 
@@ -32,3 +36,9 @@
 <br />
 
 <%= link_to 'New Exercise', new_exercise_path %>
+
+<p>TEST: Following is a jQuery UI datepicker to show if jQuery UI is working.</p>
+<p>Date: <input type="text" class="datepicker" /></p>
+<p>
+  <button class="button">My stylized button</button>
+</p>
