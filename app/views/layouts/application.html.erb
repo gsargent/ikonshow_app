@@ -6,6 +6,10 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= cloudinary_js_config %>
+  <%  theme_name = "le-frog" #smoothness will be the default"
+      ui_version = "1.9.2"
+  %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/#{ui_version}/themes/#{theme_name}/jquery-ui.css" %>
 </head>
 <body>
 	<div id="container">
