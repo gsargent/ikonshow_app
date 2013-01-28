@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 #  Dave was here
-gem 'rails', '3.2.8' # was this: 3.1.3'
+gem 'rails', '3.2.11' # was this: 3.2.8, and 3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
