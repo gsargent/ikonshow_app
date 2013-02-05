@@ -12,10 +12,16 @@
 </p>
 
 <p>
+  <b>Skill name:</b>
+  <%= @exercise.lookup_skill.skillname %> <br />
+  <b>from skill set:</b>
+  <%= @exercise.lookup_skill.skillset %> 
+</p>
+
+<p>
 	<b>Created by:</b>
 	<%= @exercise.user.username %>	
 </p>
-
 
 
 <% @exercise.photos.each do |photo| %>

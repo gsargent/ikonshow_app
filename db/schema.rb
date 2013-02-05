@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130102050527) do
+ActiveRecord::Schema.define(:version => 20130130195528) do
 
   create_table "attachinary_files", :force => true do |t|
     t.integer  "attachinariable_id"
@@ -31,10 +31,22 @@ ActiveRecord::Schema.define(:version => 20130102050527) do
 
   create_table "exercises", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "user_id"
+    t.integer  "zlookup_skill_id"
   end
+
+  create_table "lookup_skills", :force => true do |t|
+    t.integer  "sort_order"
+    t.string   "skillname"
+    t.string   "skillset"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "lookup_skills", ["skillname"], :name => "index_lookup_skills_on_skillname", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

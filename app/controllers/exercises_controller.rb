@@ -1,6 +1,4 @@
 class ExercisesController < ApplicationController
-  # dummy comment
-  # require "awesome_print"
 
   # GET /exercises
   # GET /exercises.json
@@ -61,7 +59,7 @@ class ExercisesController < ApplicationController
   # PUT /exercises/1
   # PUT /exercises/1.json
   def update
-    @exercise = Exercise.find(params[:id])
+    @exercise = Exercise.find(params[:id])    
 
     respond_to do |format|
       if @exercise.update_attributes(params[:exercise])

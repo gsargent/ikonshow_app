@@ -18,6 +18,10 @@
       <span><%= exercise.name %></span><br />
       <span><%= exercise.user.username %></span>
     </span>
+
+    <span class = 'exercise_label'>
+      <span><%= exercise.lookup_skill.skillname %></span>
+    </span>
     
     <span class = 'edit_menu'>
     <%= link_to 'Show', exercise %>
