@@ -32,8 +32,8 @@
 
   <div>
     <%= f.label :lookup_skill_id, "Kind of skill" %><br />
-    <% opts = options_from_collection_for_select(LookupSkill.all, :id, :skillname, @exercise.lookup_skill_id ) %>
-    <%= f.select :lookup_skill_id, opts, :include_blank => true %>
+
+    <%= f.select :lookup_skill_id, get_sorted_options_tags_for_skills, :include_blank => true %>
   </div>
 
 
