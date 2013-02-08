@@ -17,7 +17,7 @@ module ExercisesHelper
 	end
 
 	def get_sorted_options_tags_for_skills
-	  options_from_collection_for_select(LookupSkill.order(:sort_order), 
+	  options_from_collection_for_select(LookupSkill.order(:line_num), 
 	  	:id, :skillname, @exercise.lookup_skill_id )
 	end
 end

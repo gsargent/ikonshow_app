@@ -48,21 +48,21 @@ end
 skills = [
   {
     id:           1,
-    sort_order:   10,
+    line_num:     10,
   	skillname:    'exact match', 
   	skillset:     'matching', 
   	description:  'Simple matchine where the stimulus is identical to one of the possible choices. Only a single match is made.'
   },
   {
     id:           2,
-    sort_order:   20,
+    line_num:     20,
   	skillname:    'general match', 
   	skillset:     'matching', 
   	description:  'Match where stimulis is not exactly the same as the choices. For example if the stimulus is "A" and the choices are "a b c and d" then "a" matches.'
   },
   {
     id:           3,
-    sort_order:   30,
+    line_num:     30,
   	skillname:    'simple sort',   
   	skillset:     'sorting',  
   	description:  'Arrange things into some order, e.g. alphabetical or numerical or small to large.'
