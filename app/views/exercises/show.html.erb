@@ -32,5 +32,8 @@
 
 <br />
 
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<!-- control access to edit links -->
+<% if can? :edit, @exercise %>
+  <%= link_to 'Edit', edit_exercise_path(@exercise) %>
+<% end %>
 <%= link_to 'Back', exercises_path %>

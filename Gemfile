@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.11' # was this: 3.2.8    3.1.3'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -10,6 +10,14 @@ group :development do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'binding_of_caller'
+  # the rails-erd gem requires graphviz - which wouldn't install.
+  # See rails-erd.rubyforge.org. Under install it lists:
+  # $ sudo port install graphviz. This failed. Googling led to 'gdbm'.
+  # I finally ran at the command prompt: $ sudo port uninstall  --follow-dependents graphviz
+  #                                      $ sudo port clean gdbm
+  #                                      $ sudo port install graphviz
+  # and it ran to completion.
+  gem 'rails-erd'
 end
 
 group :production do
@@ -49,3 +57,4 @@ gem 'devise'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
+gem 'cancan'

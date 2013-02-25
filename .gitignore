@@ -24,3 +24,4 @@ doc/
 .generators
 .sass-cache/
 /config/cloudinary.yml
+erd.pdf

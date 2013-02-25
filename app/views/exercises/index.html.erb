@@ -24,9 +24,13 @@
     </span>
     
     <span class = 'edit_menu'>
+
     <%= link_to 'Show', exercise %>
-    <%= link_to 'Edit', edit_exercise_path(exercise) %>
-    <%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% if can? :edit, exercise %>
+      <%= link_to 'Edit', edit_exercise_path(exercise) %>
+      <%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     </span>
     <ul>
       <% exercise.photos.each do |photo| %>

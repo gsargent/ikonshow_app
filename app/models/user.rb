@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   		where(conditions).first
   	end
   end
+
+  def role?(role)
+    roles.include? role.to_s
+  end
 end

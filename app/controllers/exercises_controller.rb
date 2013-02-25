@@ -1,11 +1,16 @@
 class ExercisesController < ApplicationController
+  # cancan gem load's instance variables, e.g. @Exercise
+  load_and_authorize_resource
+  # therefore the usual instance variable lines 
+  # are loaded by cancan and are commented out below & labeled 'cancan'
 
   # GET /exercises
   # GET /exercises.json
   def index
-    #@exercises = Exercise.all
-    # restrict to current user
-    @exercises = current_user.exercises.find(:all)
+    #@exercises = Exercise.all  # show all of current user's 
+                                # exercises, not every exercis
+    # special case, restrict to current user
+    @exercises = current_user.exercises.find(:all) 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +21,7 @@ class ExercisesController < ApplicationController
   # GET /exercises/1
   # GET /exercises/1.json
   def show
-    @exercise = Exercise.find(params[:id])
+    # @exercise = Exercise.find(params[:id])  #cancan
 
     respond_to do |format|
       format.html # show.html.erb

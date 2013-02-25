@@ -41,9 +41,11 @@ GEM
       erubis (>= 2.7.0)
     binding_of_caller (0.6.8)
     builder (3.0.4)
+    cancan (1.6.9)
     carrierwave (0.8.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    choice (0.1.6)
     cloudinary (1.0.43)
       aws_cf_signer
       rest-client
@@ -97,6 +99,11 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
+    rails-erd (1.1.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      choice (~> 0.1.6)
+      ruby-graphviz (~> 1.0.4)
     railties (3.2.11)
       actionpack (= 3.2.11)
       activesupport (= 3.2.11)
@@ -109,6 +116,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    ruby-graphviz (1.0.8)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -142,6 +150,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  cancan
   carrierwave
   cloudinary
   coffee-rails (~> 3.2.2)
@@ -150,6 +159,7 @@ DEPENDENCIES
   jquery-ui-rails
   pg
   rails (= 3.2.11)
+  rails-erd
   sass-rails (~> 3.2.3)
   sqlite3
   turn (= 0.8.2)
