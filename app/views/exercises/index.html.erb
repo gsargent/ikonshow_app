@@ -42,5 +42,6 @@
 
 
 <br />
-
-<%= link_to 'New Exercise', new_exercise_path %>
+<% if can? :create, Exercise %>
+  <%= link_to 'New Exercise', new_exercise_path %>
+<% end %>
