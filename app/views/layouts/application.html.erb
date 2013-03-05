@@ -24,9 +24,21 @@
         <ul class="nav">
           <li><%= link_to "Home",      root_path %></li>
           <li><%= link_to "Exercises", exercises_path %></li>
-          <li><%= link_to "Contact Us (dummy)" %></li>
-          <li><%= link_to "Other (dummy)" %></li>
+          <li><%= link_to "Assignments (dummy)" %></li>
+          <li><%= link_to "Users (dummy)" %></li>
         </ul>
+
+      <div id="user_login">
+        <% if user_signed_in? %>
+          <strong><%= current_user.email %></strong> <br />
+          <%= link_to "Edit profile", edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login",   new_user_session_path %>
+        <% end %>
+      </div>
+
       </div>
     </div>
   </div>
@@ -35,6 +47,7 @@
 
 
 	<div id="container" class="container">
+    <!--
 		<div id="user_nav">
 			<% if user_signed_in? %>
 				Logged in as <strong><%= current_user.email %></strong>,
@@ -45,7 +58,7 @@
 				<%= link_to "Login",   new_user_session_path %>
 			<% end %>
 		</div>
-
+    -->
 		<% flash.each do |name, msg| %>
 			<%= content_tag :div, msg, id: "flash_#{name}" %>
 		<% end %>
