@@ -25,12 +25,12 @@
           <li><%= link_to "Home",      root_path %></li>
           <li><%= link_to "Exercises", exercises_path %></li>
           <li><%= link_to "Assignments (dummy)" %></li>
-          <li><%= link_to "Users (dummy)" %></li>
+          <li><%= link_to "Users (admin)" %></li>
         </ul>
 
       <div id="user_login">
         <% if user_signed_in? %>
-          <strong><%= current_user.email %></strong> <br />
+          <%= current_user.email %> <br />
           <%= link_to "Edit profile", edit_user_registration_path %> |
           <%= link_to "Logout", destroy_user_session_path, :method => 'delete' %>
         <% else %>
