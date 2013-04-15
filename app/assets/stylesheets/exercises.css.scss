@@ -19,7 +19,7 @@ li {
 
 ul:nth-child(even) {
 	background-color: #E8E8E8;
-	border-radius: 5px;
+	border-radius:    5px;
 }
 
 ul {
@@ -27,9 +27,9 @@ ul {
 }
 
 ul ul {
-	overflow: auto;
+	overflow:    auto;
 	white-space: nowrap;
-	height: 90px;
+	height:      90px;
 }
 
 ul ul img {
@@ -40,23 +40,23 @@ ul ul li {
 }
 
 .exercise_label{
-	color: blue;
-	float: left;
-	width: 100px;
+	color:     blue;
+	float:     left;
+	width:     100px;
 	#overflow: auto;
 	word-wrap: break-word;
 }
 
 /* this is the label (that is, the first column) on the exercises index page */
 .exercise_label span:nth-child(3) {
-	color: dimGrey;
-	font-size: 8pt;
+	color:       dimGrey;
+	font-size:   8pt;
 	font-family: helvetica;
 }
 
 .edit_menu {
-	color: red;
-	float: left;
-	width: 50px;
+	color:     red;
+	float:     left;
+	width:     50px;
 	font-size: smaller;
 }

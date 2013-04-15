@@ -1,0 +1,46 @@
+<!-- 
+  Administrative only page to list users and perform administrative 
+  actions such as giving a new :admin role, or perhaps :moderator
+  role, or deactivating a user for bad behavior, etc.
+-->
+<h2>Admin Actions</h2>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+	  	<th>id</th>
+		  <th>Email</th>
+		  <th>Username</th>
+		  <th>Roles</th>
+		  <th>sign in<br />count</th>
+		  <th>Last signin</th>
+	  </tr>
+  </thead>
+  <tbody>  		
+  	<% @users.each do |user| %>
+  	<tr>
+  		<td>
+  			<%= user.id %>
+  		</td>
+  		<td>
+        <%= user.email %>
+  		</td>
+  		<td>
+  			<%= user.username %>
+  		</td>
+  		<td>
+  			<%= roles_for(user) %>
+  		</td>
+  		<td>
+  			<%= user.sign_in_count %>
+  		</td>
+			<td>
+				<%= user.last_sign_in_at %>
+			</td>
+      <td>
+        <%= link_to "edit", edit_user_path(user) %>
+      </td>
+  	</tr>
+  	<% end %>
+  </tbody>
+</table>

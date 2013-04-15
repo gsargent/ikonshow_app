@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :exercises
+  has_and_belongs_to_many :roles, :join_table => :users_roles
+  rolify
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -11,7 +13,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :email, :password, :password_confirmation, 
-  				  :remember_me, :login
+  				  :remember_me, :login,
+            :role_ids
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'

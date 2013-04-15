@@ -1,10 +1,15 @@
 Ikonicx2::Application.routes.draw do
 
   resources :exercises
+  
+   devise_for :users, :controllers => { :registrations => :registrations }
 
-  #get "home/index"
+  resources :users
 
-  devise_for :users
+  # I have an admins controller that inherits from devise registrations to provide 
+  # application specific processing related to administrators on update.
+  resources :admins
+  
 
   root :to => "home#index"
   

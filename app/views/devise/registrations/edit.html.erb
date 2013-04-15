@@ -1,27 +1,56 @@
+<!-- override the styling of checkbox labels for 'user roles' to make them
+     appear on the same line -->
+<style type="text/css">
+  label[for^=role] {
+    display: inline;
+  }
+</style>
+
+<script type="text/javascript">
+  $(function(){
+    // disable submit button until user changes something
+    $(":submit").addClass("btn disabled");
+
+    // re-enable submit button when any input field changes
+    $("input").change(function(){
+      $(":submit").removeClass('disabled');
+    })
+  });
+</script>
+
 <h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
 
-  <fieldset>
-    <legend>Change password</legend>
-    <div>New <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, :autocomplete => "off" %></div>
+<!-- following is an accordian that holds all the content in separate partial files -->
+  <%
+    accordion_panels = []
+    accordion_panels << { :label         => "General Information", 
+                          :partial_name  => "edit_general", 
+                          :is_open       => :true }
 
-    <div>New <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
-  </fieldset>
+    accordion_panels << { :label         => "User roles",
+                          :partial_name  => "edit_roles",   
+                          :is_open       => :true }
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    accordion_panels << { :label         => "Change password",     
+                          :partial_name  => "edit_change_password" }
+  %>
+
+  <%= render :partial => "accordion_layout",  :locals => { :panels => accordion_panels, :f => f } %>
+  
+
+
+
+  <div><%= f.label :current_password %> <i>(we need your current password to confirm any changes)</i><br />
   <%= f.password_field :current_password %></div>
 
   <div><%= f.submit "Update" %></div>
+
+
 <% end %>
 
 <h3>Cancel my account</h3>

@@ -1,0 +1,22 @@
+<div class="accordion" id="accordion3">
+  <% panels.each_with_index do |panel, kt| %>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3_NONE" href="#collapse_<%= kt %>">
+        <%= panel[:label] %>
+      </a>
+    </div>
+    <div id="collapse_<%= kt %>" class="accordion-body collapse <%= "in" if panel[:is_open]  %>" >
+      <div class="accordion-inner">
+        <div class="field" >
+
+         <%= render :partial => panel[:partial_name], :locals => { :f => f } %>
+
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <% end %>
+</div>

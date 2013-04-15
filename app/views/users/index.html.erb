@@ -1,0 +1,38 @@
+<!-- 
+  Ordinary users page to list users and perform simple 
+  actions such as listing friends
+-->
+<p>views > users > index</p>
+<h2>Associates</h2>
+
+<table class="table table-striped">
+	<thead>
+	  <tr>
+	  	<th>id</th>
+		  <th>Email</th>
+		  <th>Username</th>
+		  <th>Roles</th>
+      <th></th>
+	  </tr>
+  </thead>
+  <tbody>  		
+  	<% @users.each do |user| %>
+  	<tr>
+  		<td>
+  			<%= user.id %>
+  		</td>
+  		<td>
+        <%= user.email %>
+  		</td>
+  		<td>
+  			<%= user.username %>
+  		</td>
+  		<td>
+  			<%= roles_for(user) %>
+  		</td>
+
+      <td><%= link_to "edit", edit_user_path(user) %></td>
+  	</tr>
+  	<% end %>
+  </tbody>
+</table>

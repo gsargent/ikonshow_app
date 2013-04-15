@@ -8,7 +8,7 @@ gem 'rails', '3.2.11'
 group :development do
   gem 'sqlite3'
   gem 'awesome_print'
-  gem 'better_errors'
+  gem 'better_errors','0.7.2'
   gem 'binding_of_caller'
   # the rails-erd gem requires graphviz - which wouldn't install.
   # See rails-erd.rubyforge.org. Under install it lists:
@@ -52,8 +52,10 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 
-gem 'devise'
+gem 'devise', '~>2.2.3'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
 gem 'cancan'
+gem 'rolify'
+gem 'simple_form'

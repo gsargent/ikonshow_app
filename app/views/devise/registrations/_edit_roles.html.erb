@@ -1,0 +1,8 @@
+<%= hidden_field_tag "user[role_ids][]", nil %>
+
+<% Role.all.each do |role| %>
+  <% next if role.name == "admin" %>
+  <%= check_box_tag "user[role_ids][]", role.id, current_user.role_ids.include?(role.id), id: dom_id(role) %>
+  <%= label_tag dom_id(role), role.name %> 
+  <br />
+<% end %>

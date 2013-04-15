@@ -31,7 +31,11 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     # before filter in application requires authentication, so know user is authenticated
-      can :read, :all
+      if user.has_role?(:admin)
+        can :manage, :all
+      else
+        can :read, :all
+      end
  
   end
 end
