@@ -1,7 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
   require 'awesome_print'
 
- 
+  # GET /exercises/1/edit
+  def edit 
+    puts "7777777777"
+    ap current_user
+  end
+
   # POST /users
   def update
 

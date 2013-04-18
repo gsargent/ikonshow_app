@@ -4,25 +4,31 @@
   label[for^=role] {
     display: inline;
   }
+
+  input[type=submit] {
+    color: "red";
+    
+  }
 </style>
 
 <script type="text/javascript">
   $(function(){
+   
     // disable submit button until user changes something
-    $(":submit").addClass("btn disabled");
+    $(":submit").prop('disabled', 'true');
 
     // re-enable submit button when any input field changes
     $("input").change(function(){
-      $(":submit").removeClass('disabled');
-    })
+      $(":submit").removeProp('disabled');
+    });
+ 
   });
 </script>
 
-<h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
+<h2>yukEdit <%= resource_name.to_s.humanize %> Profile</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
-
 
 
 <!-- following is an accordian that holds all the content in separate partial files -->
@@ -38,7 +44,16 @@
 
     accordion_panels << { :label         => "Change password",     
                           :partial_name  => "edit_change_password" }
-  %>
+  
+    # if password is left blank, password_confirmation returns empty also, no matter what
+    # so it is not tested for. If the user enters only password_confirmation, this test cannot
+    # open the Change Password accordion panel. I see no fix for this. (gfs)
+ 
+    if ( params.has_key?("password") ) then
+      accordion_panels[2][:is_open] = :true 
+    end
+
+   %>
 
   <%= render :partial => "accordion_layout",  :locals => { :panels => accordion_panels, :f => f } %>
   
@@ -48,7 +63,7 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm any changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit "Update", :class => "btn" %></div>
 
 
 <% end %>
