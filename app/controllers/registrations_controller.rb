@@ -24,13 +24,14 @@ class RegistrationsController < Devise::RegistrationsController
     ap current_user.roles
     puts "=============="
     super
+  
 
-  # 	if not @user.update_attributes(params[:user])
-  #     puts "7777 worked 7777"
-  # 		redirect_to @user, notice: 'User was successfully updated.'
-  # 	else
-  #     puts "8888 failed 8888"
-  # 		render :edit
-  # 	end
+  	# if  @user.update_attributes(params[:user])
+   #    puts "7777 worked 7777"
+  	# 	redirect_to @user, notice: 'User was successfully updated.'
+  	# else
+   #    puts "8888 failed 8888"
+  	# 	render :edit, notice: "Edit failed for Kilroy"
+  	# end
   end
 end

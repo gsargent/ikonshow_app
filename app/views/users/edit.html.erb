@@ -28,8 +28,12 @@
     <div class="field" border="1px">
       <% Role.all.each do |role| %>
       <% next if role.name == "admin" %>
-      <%= check_box_tag "user[role_ids][]", role.id, current_user.role_ids.include?(role.id) %>
-      <%= role.name %><br /> 
+
+
+      <label class="radio">
+        <%= check_box_tag "user[role_ids][]", role.id, current_user.role_ids.include?(role.id) %>
+        <%= role.name %> 
+      </label>
       <% end %>
     </div>
   </fieldset>
