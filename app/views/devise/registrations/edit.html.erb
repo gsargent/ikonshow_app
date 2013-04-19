@@ -7,7 +7,20 @@
 
   input[type=submit] {
     color: "red";
-    
+  }
+
+  /* Following two selectors involving ".field_with_errors" we added when the color did not show.
+     I found the solution from *Kevin Reeth* dated Jun 6 '12. 
+     See: http://stackoverflow.com/questions/5267998/rails-3-field-with-errors-wrapper-changes-the-page-appearance-how-to-avoid-t/10921200#10921200
+
+   */
+  .field_with_errors label {
+    padding: 2px;
+    color: red;
+  }
+  .field_with_errors input {
+    padding: 3px 2px;
+    border: 2px solid red;
   }
 </style>
 
@@ -48,9 +61,15 @@
     # if password is left blank, password_confirmation returns empty also, no matter what
     # so it is not tested for. If the user enters only password_confirmation, this test cannot
     # open the Change Password accordion panel. I see no fix for this. (gfs)
- 
-    if ( params.has_key?("password") ) then
-      accordion_panels[2][:is_open] = :true 
+
+    # first time called, params is nil & the has_key? method throws an error, so test.
+    # has_key? only works on flat portion of a hash, so break into two tests.
+    if not params.nil?
+      if (params.has_key?("user"))
+        if params["user"].has_key?("password")
+          accordion_panels[2][:is_open] = :true 
+        end
+      end
     end
 
    %>

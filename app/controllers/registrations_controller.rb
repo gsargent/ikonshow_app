@@ -10,8 +10,6 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /users
   def update
 
-  	#@user = User.find(params[:user][:id])
-
     # note: if password was not changed it does not need to be set, remove
     #       passwords from the params
     if params[:user][:password].length == 0 then
@@ -24,14 +22,6 @@ class RegistrationsController < Devise::RegistrationsController
     ap current_user.roles
     puts "=============="
     super
-  
-
-  	# if  @user.update_attributes(params[:user])
-   #    puts "7777 worked 7777"
-  	# 	redirect_to @user, notice: 'User was successfully updated.'
-  	# else
-   #    puts "8888 failed 8888"
-  	# 	render :edit, notice: "Edit failed for Kilroy"
-  	# end
+ 
   end
 end

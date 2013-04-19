@@ -29,10 +29,8 @@ class UsersController < ApplicationController
     puts "about update xxxx"
 
     if @user.update_attributes(params[:user])
-         puts "True qqqqq"
     	redirect_to @user, notice: 'User was successfully updated.'
     else
-       puts "False qqqqq"
     	render action: 'edit'
     end
   end
