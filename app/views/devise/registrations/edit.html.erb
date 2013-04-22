@@ -16,7 +16,7 @@
    */
   .field_with_errors label {
     padding: 2px;
-    color: red;
+    background-color: red;
   }
   .field_with_errors input {
     padding: 3px 2px;
@@ -30,8 +30,9 @@
     // disable submit button until user changes something
     $(":submit").prop('disabled', 'true');
 
-    // re-enable submit button when any input field changes
+    // re-enable stuff when any input field changes
     $("input").change(function(){
+      // re-enable submit button
       $(":submit").removeProp('disabled');
     });
  
@@ -57,6 +58,9 @@
 
     accordion_panels << { :label         => "Change password",     
                           :partial_name  => "edit_change_password" }
+
+    accordion_panels << { :label         => "Cancel my account",
+                          :partial_name  => "edit_cancel_account" }
   
     # if password is left blank, password_confirmation returns empty also, no matter what
     # so it is not tested for. If the user enters only password_confirmation, this test cannot
@@ -79,16 +83,12 @@
 
 
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm any changes)</i><br />
+  <div id="my_password_div"><%= f.label :current_password %> <i>(we need your current password to confirm any changes)</i><br />
   <%= f.password_field :current_password %></div>
 
   <div><%= f.submit "Update", :class => "btn" %></div>
 
 
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
 <%= link_to "Back", :back %>
