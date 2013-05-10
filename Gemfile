@@ -18,6 +18,7 @@ group :development do
   #                                      $ sudo port install graphviz
   # and it ran to completion.
   gem 'rails-erd'
+  gem 'xray-rails'    # view files behind a of rendered view
 end
 
 group :production do

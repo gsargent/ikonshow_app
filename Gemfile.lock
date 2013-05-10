@@ -144,6 +144,9 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    xray-rails (0.1.5)
+      coffee-rails
+      rails (>= 3.1.0)
 
 PLATFORMS
   ruby
@@ -169,3 +172,4 @@ DEPENDENCIES
   sqlite3
   turn (= 0.8.2)
   uglifier (>= 1.2.3)
+  xray-rails
