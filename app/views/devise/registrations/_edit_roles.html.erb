@@ -1,7 +1,8 @@
 <%= hidden_field_tag "user[role_ids][]", nil %>
 
-<% Role.all.each do |role| %>
-  <% next if role.name == "admin" %>
+<% 
+  # 'roles_user_can_have' is a helper in the registrations_controller that eliminates administrator role
+  roles_user_can_have.each do |role| %>
   <%= check_box_tag "user[role_ids][]", role.id, current_user.role_ids.include?(role.id), id: dom_id(role) %>
   <%= label_tag dom_id(role), role.name %> 
   <br />
