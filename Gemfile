@@ -18,8 +18,18 @@ group :development do
   #                                      $ sudo port install graphviz
   # and it ran to completion.
   gem 'rails-erd'
+<<<<<<< HEAD
   gem 'xray-rails'    # view files behind a of rendered view. See: https://github.com/brentd/xray-rails
+=======
+  gem 'xray-rails'    # view files behind a of rendered view
+ 
+>>>>>>> 2e44e77bd76c7b3452a7f960a1ae1b514efc98b2
 end
+
+gem 'rspec-rails', '>=2.12.0', :group => [:development, :test]
+gem 'capybara', '>=2.0',  :group => [:development, :test]
+
+ 
 
 group :production do
   gem 'pg'        # installed for deployment to Heroku
