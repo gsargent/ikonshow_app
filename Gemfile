@@ -19,7 +19,13 @@ group :development do
   # and it ran to completion.
   gem 'rails-erd'
   gem 'xray-rails'    # view files behind a of rendered view
+ 
 end
+
+gem 'rspec-rails', '>=2.12.0', :group => [:development, :test]
+gem 'capybara', '>=2.0',  :group => [:development, :test]
+
+ 
 
 group :production do
   gem 'pg'        # installed for deployment to Heroku
