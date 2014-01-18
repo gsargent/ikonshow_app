@@ -26,7 +26,6 @@ FactoryGirl.define do
   end
 
   factory :role do
-    puts "inside :role factory-------"
     id 100
     name "__-__"  
   end

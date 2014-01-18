@@ -1,6 +1,6 @@
 require 'spec_helper'  
 
-describe "Home page v1," do
+describe "Home page w," do
 
   before(:each) do
     @user = FactoryGirl.create(:user)
