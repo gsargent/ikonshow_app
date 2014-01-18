@@ -81,3 +81,24 @@ skills = [
 skills.each do |skill|
   LookupSkill.create_or_update skill
 end
+
+# seed the 'roles' table. Spread out the IDs so can add others and group together logically, e.g.
+@base_roles = [
+  {
+    id:      10,
+    name:    'admin'
+  },
+  {
+    id:      20,
+    name:    'teacher'
+  },
+  {
+    id:      30,
+    name:    'parent'
+  }
+]
+
+#update in place
+@base_roles.each do |role|
+  Role.create_or_update role
+end

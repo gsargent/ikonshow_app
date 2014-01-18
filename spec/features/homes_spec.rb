@@ -1,6 +1,6 @@
 require 'spec_helper'  
 
-describe "Homes" do
+describe "Home page" do
   describe "GET /homes" do
      it "should have the content 'Welcome'" do
       visit '/'

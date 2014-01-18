@@ -20,7 +20,13 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # gfs changes 'spec/fixtures' to 'test/fixtures'
+  # gfs - probably should remove as using factory-girl to replace fixtures (did
+  # remove config.fixture_path on 1/6/2014)
+  # config.fixture_path = "#{::Rails.root}/test/fixtures"
+
+  # configure Factory Girl
+  config.include FactoryGirl::Syntax::Methods
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -37,4 +43,10 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+
+  # seed the test database with data
+  config.before(:suite) do
+    require "#{Rails.root}/db/seeds.rb"
+  end
 end
