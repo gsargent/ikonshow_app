@@ -3,17 +3,19 @@ FactoryGirl.define do
 
   # a valid user
   factory :user do 
-    username               "joeuser"
+    username               "joeuser2"
     email                  { "#{username}@example.com" }
-    password               "foobar"
-    password_confirmation  "foobar"
+    password               "password"
+    password_confirmation  "password"
   end
 
 
   trait :admin do
     username "bossey"
     after(:create) do |user|
-      association :roles, factory: :user, :role => 'admin' 
+      #FactoryGirl.create :role, factory: :user, :role => 'admin' 
+      # FactoryGirl.create :role, user: user    #, :role => 'admin' 
+      user.roles << Role.find_by_name('teacher')
     end
   end
 
@@ -26,12 +28,12 @@ FactoryGirl.define do
   end
 
   factory :role do
-    id 100
-    name "__-__"  
+    id 10
+    name "ten ten"  
   end
 
-  factory :add_roll do
-    roles { [ FactoryGirl.create(:role)] }
+  factory :user_with_roll do
+    rolls { [ FactoryGirl.create(:role, :admin)] }
   end
 
 end
